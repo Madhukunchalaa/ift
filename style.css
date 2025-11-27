@@ -666,7 +666,7 @@ img {
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 10px;
+    width: 40px;
     height: 100%;
     background: #555;
     border-left: 2px dashed #FFC107;
@@ -674,10 +674,44 @@ img {
     z-index: 0;
 }
 
+.road-path::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100%;
+    width: 2px;
+    border-left: 2px dashed rgba(255, 255, 255, 0.6);
+}
+
+.moving-truck {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    width: 60px; /* Increased size for the image */
+    height: auto;
+    animation: drive 8s linear infinite;
+}
+
+.moving-truck img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 5px 10px rgba(0,0,0,0.3)); /* Shadow on the image itself */
+    transform: rotate(-90deg);
+}
+
+@keyframes drive {
+    0% { top: -50px; }
+    100% { top: 100%; }
+}
+
 .road-stop {
     position: relative;
     margin-bottom: 60px;
-    z-index: 1;
+    z-index: 2;
     display: flex;
     justify-content: center;
 }
@@ -694,8 +728,10 @@ img {
     transition: var(--transition);
 }
 
-.road-sign:hover {
+.road-sign:hover,
+.road-stop.active .road-sign {
     transform: scale(1.1) rotate(2deg);
+    z-index: 10; /* Bring to front */
 }
 
 .sign-warning {
@@ -777,7 +813,7 @@ img {
 /* Footer & Contact */
 .footer {
     background-color: var(--secondary-color);
-    background-image:  url('assets/footer-bg.png');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('assets/footer-bg.png');
     background-size: cover;
     background-position: center;
     color: var(--white);

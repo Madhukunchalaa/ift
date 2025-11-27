@@ -61,4 +61,30 @@ document.addEventListener('DOMContentLoaded', () => {
         el.style.animationFillMode = 'forwards'; // Keep state after animation
         observer.observe(el);
     });
+
+    // Truck Animation Sync
+    const truck = document.querySelector('.moving-truck');
+    const roadStops = document.querySelectorAll('.road-stop');
+
+    if (truck && roadStops.length > 0) {
+        function checkTruckPosition() {
+            const truckRect = truck.getBoundingClientRect();
+            const truckCenterY = truckRect.top + truckRect.height / 2;
+
+            roadStops.forEach(stop => {
+                const stopRect = stop.getBoundingClientRect();
+                // Check if truck center is within the vertical range of the stop with some buffer
+                if (truckCenterY >= stopRect.top - 50 && truckCenterY <= stopRect.bottom + 50) {
+                    stop.classList.add('active');
+                } else {
+                    stop.classList.remove('active');
+                }
+            });
+
+            requestAnimationFrame(checkTruckPosition);
+        }
+
+        // Start the loop
+        requestAnimationFrame(checkTruckPosition);
+    }
 });
