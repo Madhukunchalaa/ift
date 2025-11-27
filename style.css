@@ -4,6 +4,7 @@
 */
 
 :root {
+    /* Colors */
     --primary-color: #FFC107; /* Sunny Yellow */
     --secondary-color: #FF5722; /* Spicy Red/Orange */
     --accent-color: #4CAF50; /* Fresh Green */
@@ -11,13 +12,25 @@
     --light-color: #f9f9f9;
     --white: #ffffff;
     --text-color: #444444;
+
+    /* Fonts */
     --font-heading: 'Fredoka', sans-serif;
     --font-body: 'Open Sans', sans-serif;
-    --font-hand: 'Brush Script MT', 'Comic Sans MS', cursive; /* Fallback for handwritten feel */
+    --font-hand: 'Brush Script MT', 'Comic Sans MS', cursive;
+
+    /* Font Sizes */
+    --h1-size: 3.5rem;
+    --h2-size: 2.5rem;
+    --h3-size: 1.8rem;
+    --body-size: 1rem;
+    --small-size: 0.9rem;
+
+    /* Effects */
     --transition: all 0.3s ease;
     --shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
+/* Reset & Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -26,6 +39,7 @@
 
 body {
     font-family: var(--font-body);
+    font-size: var(--body-size);
     color: var(--text-color);
     line-height: 1.6;
     background-color: var(--light-color);
@@ -38,6 +52,10 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.2;
     margin-bottom: 1rem;
 }
+
+h1 { font-size: var(--h1-size); }
+h2 { font-size: var(--h2-size); }
+h3 { font-size: var(--h3-size); }
 
 a {
     text-decoration: none;
@@ -65,6 +83,10 @@ img {
 .text-white { color: var(--white); }
 .text-white-50 { color: rgba(255,255,255,0.8); }
 
+.mt-3 { margin-top: 1rem; }
+.mt-5 { margin-top: 3rem; }
+
+/* Components */
 .btn {
     display: inline-block;
     padding: 12px 30px;
@@ -75,7 +97,7 @@ img {
     transition: var(--transition);
     cursor: pointer;
     border: none;
-    font-size: 0.9rem;
+    font-size: var(--small-size);
 }
 
 .btn-primary {
@@ -113,6 +135,17 @@ img {
 .btn-outline:hover {
     background: var(--white);
     color: var(--secondary-color);
+}
+
+.btn-nav {
+    background-color: var(--secondary-color);
+    color: var(--white) !important;
+    padding: 8px 20px;
+    border-radius: 20px;
+}
+
+.btn-nav:hover {
+    background-color: #e64a19;
 }
 
 .badge {
@@ -170,23 +203,12 @@ img {
 
 .nav-links li a {
     font-weight: 600;
-    font-size: 1rem;
+    font-size: var(--body-size);
     transition: color 0.3s;
 }
 
 .nav-links li a:hover {
     color: var(--secondary-color);
-}
-
-.btn-nav {
-    background-color: var(--secondary-color);
-    color: var(--white) !important;
-    padding: 8px 20px;
-    border-radius: 20px;
-}
-
-.btn-nav:hover {
-    background-color: #e64a19;
 }
 
 .menu-toggle {
@@ -237,7 +259,7 @@ img {
 }
 
 .hero-content h1 {
-    font-size: 3.5rem;
+    font-size: var(--h1-size);
     margin-bottom: 20px;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
@@ -247,7 +269,6 @@ img {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    /* Fallback for readability if gradient fails */
     color: #FFC107; 
 }
 
@@ -269,22 +290,22 @@ img {
 }
 
 .section-header h2 {
-    font-size: 2.5rem;
+    font-size: var(--h2-size);
     color: var(--dark-color);
 }
 
-/* Scrapbook Theme */
+/* Scrapbook Theme (Who We Are) */
 .scrapbook-theme {
     background-color: #fdfbf7;
     background-image: radial-gradient(#e0e0e0 1px, transparent 1px);
-    background-size: 20px 20px; /* Dot grid pattern */
+    background-size: 20px 20px;
     position: relative;
     overflow: hidden;
 }
 
 .handwritten-title {
     font-family: var(--font-hand);
-    font-size: 3.5rem;
+    font-size: var(--h1-size);
     color: var(--secondary-color);
     transform: rotate(-2deg);
 }
@@ -299,7 +320,7 @@ img {
 
 .handwritten-note {
     font-family: var(--font-hand);
-    font-size: 1.8rem;
+    font-size: var(--h3-size);
     color: var(--primary-color);
     margin-top: 20px;
     transform: rotate(2deg);
@@ -324,16 +345,16 @@ img {
     background: #fff;
     padding: 15px 15px 40px 15px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-    position: relative; /* Changed from absolute */
+    position: relative;
     transition: var(--transition);
-    width: 48%; /* Fit two side by side */
+    width: 48%;
 }
 
 .polaroid img {
     width: 100%;
-    height: 200px; /* Fixed height for consistency */
+    height: 200px;
     object-fit: cover;
-    filter: sepia(20%); /* Vintage feel */
+    filter: sepia(20%);
 }
 
 .polaroid .caption {
@@ -377,9 +398,9 @@ img {
     z-index: 2;
 }
 
-/* Cover Section - Refactored Colors */
+/* Cover Section (What We Cover) */
 .cover-section {
-    background-color: #FFF3E0; /* Light Orange/Cream */
+    background-color: #FFF3E0;
     color: var(--dark-color);
     position: relative;
     padding-top: 100px;
@@ -449,7 +470,7 @@ img {
 .card-vintage .icon-box { color: #4CAF50; }
 .card-coffee .icon-box { color: #2196F3; }
 
-/* Menu Board Section */
+/* Menu Board Section (One-Stop Shop) */
 .menu-board-section {
     background-color: var(--white);
     padding: 80px 0;
@@ -461,8 +482,8 @@ img {
     padding: 40px;
     border-radius: 20px;
     box-shadow: 0 20px 50px rgba(0,0,0,0.2);
-    border: 10px solid #8D6E63; /* Wood frame look */
-    font-family: 'Fredoka', sans-serif; /* Chalkboard-ish font */
+    border: 10px solid #8D6E63;
+    font-family: 'Fredoka', sans-serif;
     position: relative;
 }
 
@@ -499,7 +520,7 @@ img {
 }
 
 .menu-column h3 {
-    font-size: 1.8rem;
+    font-size: var(--h3-size);
     color: #FF5722;
     margin-bottom: 20px;
     text-decoration: underline;
@@ -552,7 +573,7 @@ img {
     color: #FFECB3;
 }
 
-/* Details Section */
+/* Details Section (What You're Covered For) */
 .details-section {
     background-image: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url('assets/coverage-bg.png');
     background-size: cover;
@@ -585,7 +606,7 @@ img {
     margin-bottom: 15px;
 }
 
-/* Road Trip Theme */
+/* Road Trip Theme (Why Love Us) */
 .road-trip-theme {
     background-color: #e0e0e0;
     background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
@@ -636,7 +657,6 @@ img {
     transform: scale(1.1) rotate(2deg);
 }
 
-/* Warning Sign (Yellow Diamond) */
 .sign-warning {
     background: #FFC107;
     color: #000;
@@ -650,7 +670,6 @@ img {
     margin-bottom: 10px;
 }
 
-/* Direction Sign (Green Rect) */
 .sign-direction {
     background: #00695C;
     color: #fff;
@@ -664,7 +683,6 @@ img {
     font-size: 1.1rem;
 }
 
-/* Aussie Sign (Custom) */
 .sign-aussie {
     background: #fff;
     border: 5px solid #FF5722;
@@ -683,7 +701,7 @@ img {
     margin-bottom: 10px;
 }
 
-/* Sauce Box Update */
+/* Sauce Box (Optional Extras) */
 .sauce-box {
     background: var(--dark-color);
     color: var(--white);
@@ -715,40 +733,22 @@ img {
     margin-right: 5px;
 }
 
-/* Mobile Road Trip */
-@media (max-width: 768px) {
-    .road-path {
-        left: 20px;
-        transform: none;
-    }
-    
-    .stop-left, .stop-right, .stop-center {
-        justify-content: flex-start;
-        padding-left: 60px;
-        padding-right: 0;
-    }
-    
-    .road-sign {
-        width: 100%;
-        max-width: 300px;
-        transform: none !important; /* Reset rotation for readability */
-    }
-    
-    .road-sign:hover {
-        transform: scale(1.05) !important;
-    }
-}
-
-/* Footer */
+/* Footer & Contact */
 .footer {
     background-color: var(--secondary-color);
-    background-image: linear-gradient(rgba(255, 87, 34, 0.7), rgba(255, 87, 34, 0.7)), url('assets/footer-bg.png');
+    background-image:  url('assets/footer-bg.png');
     background-size: cover;
     background-position: center;
     color: var(--white);
     padding: 80px 0 50px;
     position: relative;
     text-align: center;
+}
+
+.footer h2 {
+    font-size: 3rem;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
 
 .footer-links {
@@ -769,28 +769,6 @@ img {
     font-size: 0.9rem;
     opacity: 0.6;
 }
-
-/* Animations */
-@keyframes pop {
-    0% { transform: scale(0.8); opacity: 0; }
-    100% { transform: scale(1); opacity: 1; }
-}
-
-@keyframes slideUp {
-    0% { transform: translateY(30px); opacity: 0; }
-    100% { transform: translateY(0); opacity: 1; }
-}
-
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
-    40% {transform: translateY(-20px);}
-    60% {transform: translateY(-10px);}
-}
-
-.animate-pop { animation: pop 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; }
-.animate-slide-up { animation: slideUp 0.8s ease forwards; }
-.animate-bounce { animation: bounce 2s infinite; }
-.delay-1 { animation-delay: 0.2s; }
 
 /* Contact Form */
 .contact-form-container {
@@ -831,17 +809,27 @@ img {
     padding: 15px;
 }
 
-/* Mobile Form */
-@media (max-width: 768px) {
-    .simple-form .form-row {
-        flex-direction: column;
-        gap: 10px;
-    }
-    
-    .contact-form-container {
-        padding: 20px;
-    }
+/* Animations */
+@keyframes pop {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
 }
+
+@keyframes slideUp {
+    0% { transform: translateY(30px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-20px);}
+    60% {transform: translateY(-10px);}
+}
+
+.animate-pop { animation: pop 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; }
+.animate-slide-up { animation: slideUp 0.8s ease forwards; }
+.animate-bounce { animation: bounce 2s infinite; }
+.delay-1 { animation-delay: 0.2s; }
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
@@ -888,7 +876,7 @@ img {
         max-width: 300px;
         position: relative;
         margin-bottom: 30px;
-        transform: rotate(0deg) !important; /* Reset rotation for cleaner mobile look */
+        transform: rotate(0deg) !important;
     }
     
     .p-left, .p-right {
@@ -938,4 +926,14 @@ img {
     }
     
     .footer h2 { font-size: 2.2rem; }
+
+    /* Contact Form Mobile */
+    .simple-form .form-row {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .contact-form-container {
+        padding: 20px;
+    }
 }
