@@ -258,6 +258,20 @@ img {
     background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(255,87,34,0.3) 100%);
 }
 
+.hero-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    gap: 40px;
+}
+
+.hero-text {
+    flex: 1;
+    text-align: left;
+}
+
 .hero-content h1 {
     font-size: var(--h1-size);
     margin-bottom: 20px;
@@ -276,8 +290,35 @@ img {
     font-size: 1.2rem;
     margin-bottom: 30px;
     max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
+    /* margin-left: auto; Removed to align left */
+    /* margin-right: auto; Removed to align left */
+}
+
+.hero-form {
+    flex: 1;
+    max-width: 500px;
+}
+
+/* Responsive adjustments for Hero */
+@media (max-width: 992px) {
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-text {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .hero-content p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .hero-form {
+        width: 100%;
+    }
 }
 
 /* Sections General */
@@ -770,15 +811,43 @@ img {
     opacity: 0.6;
 }
 
-/* Contact Form */
+/* Contact Form - Modern 3D Card Design */
 .contact-form-container {
-    max-width: 600px;
-    margin: 0 auto;
-    background: rgba(255, 255, 255, 0.15);
-    padding: 30px;
+    background: var(--white);
     border-radius: 20px;
-    backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    overflow: hidden;
+    transform: perspective(1000px) rotateY(-5deg);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255,255,255,0.5);
+}
+
+.contact-form-container:hover {
+    transform: perspective(1000px) rotateY(0deg) translateY(-10px);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+}
+
+.form-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    padding: 20px;
+    text-align: center;
+    color: var(--white);
+}
+
+.form-header h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.form-header p {
+    margin: 5px 0 0;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.simple-form {
+    padding: 30px;
 }
 
 .simple-form .form-row {
@@ -790,13 +859,51 @@ img {
 .simple-form input,
 .simple-form select {
     width: 100%;
-    padding: 12px 20px;
-    border: none;
+    padding: 12px 15px;
+    border: 2px solid #eee;
     border-radius: 10px;
-    background: rgba(255, 255, 255, 0.9);
+    background: #f9f9f9;
     font-family: var(--font-body);
-    font-size: 1rem;
+    font-size: 0.95rem;
     color: #333;
+    transition: all 0.3s ease;
+}
+
+.simple-form input:focus,
+.simple-form select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    background: var(--white);
+    box-shadow: 0 0 0 3px rgba(255, 193, 7, 0.2);
+}
+
+.simple-form button {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1rem;
+    margin-top: 10px;
+    background: var(--dark-color);
+    color: var(--primary-color);
+    box-shadow: none;
+}
+
+.simple-form button:hover {
+    background: var(--secondary-color);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 87, 34, 0.3);
+}
+
+/* Responsive adjustments for form */
+@media (max-width: 992px) {
+    .contact-form-container {
+        transform: none;
+        max-width: 100%;
+    }
+    
+    .contact-form-container:hover {
+        transform: translateY(-5px);
+    }
 }
 
 .simple-form input::placeholder {

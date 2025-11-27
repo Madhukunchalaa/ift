@@ -40,17 +40,47 @@
     <header id="home" class="hero">
         <div class="video-background">
             <video autoplay muted loop playsinline poster="assets/hero-poster.png" id="hero-video">
-                <source src="assets/food-truck-cooking.mp4" type="video/mp4">
+                <source src="assets/video.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
             <div class="overlay"></div>
         </div>
         <div class="container hero-content">
-            <h1 class="animate-pop">Protecting Your <br><span class="text-gradient">Passion on Wheels</span></h1>
-            <p class="animate-slide-up">Fast, fun, and fuss-free insurance for the mobile food world.</p>
-            <div class="hero-buttons animate-slide-up delay-1">
-                <a href="#contact" class="btn btn-primary">Get a Quote <i class="fas fa-arrow-right"></i></a>
-                <a href="#about" class="btn btn-secondary">Learn More</a>
+
+            <div class="hero-text">
+                <h1 class="animate-pop">Protecting Your <br><span class="text-gradient">Passion on Wheels</span></h1>
+                <p class="animate-slide-up">Fast, fun, and fuss-free insurance for the mobile food world.</p>
+                <div class="hero-buttons animate-slide-up delay-1">
+                    <a href="#contact" class="btn btn-primary">Get a Quote <i class="fas fa-arrow-right"></i></a>
+                    <a href="#about" class="btn btn-secondary">Learn More</a>
+                </div>
+            </div>
+            <div class="contact-form-container hero-form">
+                <div class="form-header">
+                    <h3>Quick Quote</h3>
+                    <p>Get covered in minutes</p>
+                </div>
+                <form class="simple-form">
+                    <div class="form-row">
+                        <input type="text" placeholder="Full Name" required>
+                        <input type="text" placeholder="Company Name">
+                    </div>
+                    <div class="form-row">
+                        <input type="tel" placeholder="Contact Number" required>
+                        <input type="email" placeholder="Email ID" required>
+                    </div>
+                    <div class="form-row">
+                        <select required>
+                            <option value="" disabled selected>Coverage Required</option>
+                            <option value="food-truck">Food Truck</option>
+                            <option value="trailer">Trailer</option>
+                            <option value="van">Van</option>
+                            <option value="liability">Liability Only</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg mt-3">Get My Quote</button>
+                </form>
             </div>
         </div>
     </header>
@@ -293,29 +323,7 @@
         <div class="container text-center">
             <h2 class="animate-bounce">Ready to Roll?</h2>
             <p>Get your quote today and get back to cooking!</p>
-            <div class="contact-form-container">
-                <form class="simple-form">
-                    <div class="form-row">
-                        <input type="text" placeholder="Full Name" required>
-                        <input type="text" placeholder="Company Name">
-                    </div>
-                    <div class="form-row">
-                        <input type="tel" placeholder="Contact Number" required>
-                        <input type="email" placeholder="Email ID" required>
-                    </div>
-                    <div class="form-row">
-                        <select required>
-                            <option value="" disabled selected>Coverage Required</option>
-                            <option value="food-truck">Food Truck</option>
-                            <option value="trailer">Trailer</option>
-                            <option value="van">Van</option>
-                            <option value="liability">Liability Only</option>
-                            <option value="other">Other</option>
-                        </select>
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-lg mt-3">Get My Quote</button>
-                </form>
-            </div>
+
             <div class="footer-links">
                 <a href="#">Home</a>
                 <a href="#">About Us</a>
