@@ -1558,13 +1558,36 @@ img {
     margin-bottom: 30px;
 }
 
+/* Responsive adjustments for Contact Page */
 @media (max-width: 992px) {
     .form-layout-split {
         flex-direction: column;
+        padding: 20px; /* Reduce container padding */
     }
     
     .form-image {
         width: 100%;
+        margin-bottom: 20px;
+        display: none; /* Hide image on mobile to save space */
+    }
+
+    .contact-form-wrapper {
+        padding: 0; /* Remove wrapper padding since container has it */
+        box-shadow: none; /* Remove shadow for cleaner look */
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-layout {
+        flex-direction: column;
+    }
+    
+    .form-row-split {
+        flex-direction: column;
+        gap: 0;
+    }
+    
+    .form-row-split .form-group {
         margin-bottom: 20px;
     }
 }
