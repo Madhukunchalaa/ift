@@ -857,8 +857,8 @@ img {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.85); /* Dark overlay */
-    backdrop-filter: blur(10px); /* The requested filter */
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  
     -webkit-backdrop-filter: blur(10px);
     z-index: -1;
 }
