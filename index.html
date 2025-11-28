@@ -97,6 +97,39 @@
         </div>
     </header>
 
+    <!-- Mobile Quote Section (Visible only on mobile) -->
+    <section id="mobile-quote-section" class="section mobile-quote-section" style="display: none;">
+        <div class="container">
+            <div class="contact-form-container" id="quoteFormMobile">
+                <div class="form-header">
+                    <h3>Quick Quote</h3>
+                    <p>Get covered in minutes</p>
+                </div>
+                <form class="simple-form">
+                    <div class="form-row">
+                        <input type="text" placeholder="Full Name" required>
+                        <input type="text" placeholder="Company Name">
+                    </div>
+                    <div class="form-row">
+                        <input type="tel" placeholder="Contact Number" required>
+                        <input type="email" placeholder="Email ID" required>
+                    </div>
+                    <div class="form-row">
+                        <select required>
+                            <option value="" disabled selected>Coverage Required</option>
+                            <option value="food-truck">Food Truck</option>
+                            <option value="trailer">Trailer</option>
+                            <option value="van">Van</option>
+                            <option value="liability">Liability Only</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg mt-3">Get My Quote</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
     <!-- Who We Are (Scrapbook Style) -->
     <section id="about" class="section about-section scrapbook-theme">
         <div class="container">
@@ -194,7 +227,8 @@
                 </div>
                 <div class="menu-content">
                     <div class="menu-column">
-                        <h3>We Cover <span class="small">(The Essentials)</span></h3>
+                        <h3><span class="highlight-title">We Cover</span> <span class="small">(The Essentials)</span>
+                        </h3>
                         <ul class="menu-items">
                             <li>
                                 <span class="item-name">Food Trucks and Trailers</span>
@@ -215,7 +249,8 @@
                         </ul>
                     </div>
                     <div class="menu-column">
-                        <h3>More Cover <span class="small">(The Good Stuff)</span></h3>
+                        <h3><span class="highlight-title">More Cover</span> <span class="small">(The Good Stuff)</span>
+                        </h3>
                         <ul class="menu-items">
                             <li>
                                 <span class="item-name">Machinery Breakdown</span>

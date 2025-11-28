@@ -302,23 +302,78 @@ img {
 
 /* Responsive adjustments for Hero */
 @media (max-width: 992px) {
+    .hero {
+        min-height: 60vh; /* More compact on mobile */
+        height: auto; /* Allow content to dictate height if needed */
+        padding-top: 100px; /* Account for fixed header */
+        padding-bottom: 60px;
+    }
+
     .hero-content {
         flex-direction: column;
         text-align: center;
+        gap: 20px;
     }
 
     .hero-text {
         text-align: center;
-        margin-bottom: 40px;
+        margin-bottom: 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.2rem; /* Smaller, punchier heading */
+        line-height: 1.2;
+    }
+
+    .hero-content h2 {
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
     }
 
     .hero-content p {
         margin-left: auto;
         margin-right: auto;
+        font-size: 1rem;
     }
     
+    /* Hide form in hero on mobile */
     .hero-form {
+        display: none;
+    }
+
+    /* Ensure video is visible */
+    .video-background {
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+
+    #hero-video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+/* Mobile Quote Section */
+.mobile-quote-section {
+    display: none; /* Hidden by default on desktop */
+    padding: 40px 0;
+    background-color: var(--light-color);
+}
+
+@media (max-width: 992px) {
+    .mobile-quote-section {
+        display: block !important; /* Show on mobile */
+    }
+    
+    .mobile-quote-section .contact-form-container {
+        max-width: 100%;
+        transform: none; /* Remove 3D effect on mobile for better usability */
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     }
 }
 
@@ -569,6 +624,9 @@ img {
     font-size: var(--h3-size);
     color: #FF5722;
     margin-bottom: 20px;
+}
+
+.highlight-title {
     text-decoration: underline;
     text-decoration-style: wavy;
     text-decoration-color: #FFC107;
@@ -577,8 +635,8 @@ img {
 .menu-column h3 .small {
     font-size: 1rem;
     color: #aaa;
-    text-decoration: none;
     font-weight: 400;
+    margin-left: 10px;
 }
 
 .menu-items {
@@ -859,7 +917,6 @@ img {
     height: 100%;
     background: rgba(0, 0, 0, 0.5); /* Dark overlay */
   
-    -webkit-backdrop-filter: blur(10px);
     z-index: -1;
 }
 
@@ -1141,6 +1198,11 @@ img {
         left: 20px;
         transform: none;
     }
+
+    .moving-truck {
+        left: 40px;
+        transform: translateX(-50%);
+    }
     
     .stop-left, .stop-right, .stop-center {
         justify-content: flex-start;
@@ -1173,6 +1235,66 @@ img {
     
     .contact-form-container {
         padding: 20px;
+    }
+
+    /* General Mobile Adjustments */
+    .section {
+        padding: 50px 0; /* Reduce padding on mobile */
+    }
+
+    h2 {
+        font-size: 2rem; /* Smaller h2 on mobile */
+    }
+
+    .flavor-quote {
+        font-size: 1.2rem; /* Smaller quote text */
+        padding: 15px 20px;
+    }
+
+    .sauce-pill {
+        width: 100%; /* Full width pills on mobile */
+        justify-content: center;
+    }
+
+    /* Menu Board Mobile */
+    .menu-board {
+        padding: 15px; /* Reduce padding to prevent cut-off */
+        border-width: 5px;
+        width: 100%; /* Ensure it fits in container */
+        box-sizing: border-box; /* Explicitly set */
+    }
+
+    .menu-header h2 {
+        font-size: 2rem;
+    }
+
+    .menu-content {
+        gap: 20px;
+    }
+    
+    .menu-items li {
+        gap: 10px; /* Space between text and check */
+    }
+    
+    .item-name {
+        font-size: 1rem; /* Slightly smaller text */
+        flex: 1; /* Allow text to take available space */
+    }
+    
+    .item-check {
+        flex-shrink: 0; /* Prevent checkmark from shrinking */
+    }
+
+    .menu-column h3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .menu-column h3 .small {
+        margin-left: 0;
+        font-size: 0.9rem;
     }
 }
 
