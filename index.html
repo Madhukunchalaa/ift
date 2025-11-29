@@ -35,7 +35,7 @@
                 <li><a href="#about">About Us</a></li>
                 <li><a href="#cover">What We Cover</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li><a href="#contact" class="btn-nav">Get a Quote</a></li>
+                <li><a href="contact.html" class="btn-nav">Get a Quote</a></li>
             </ul>
         </div>
     </nav>
@@ -48,8 +48,14 @@
                 Your browser does not support the video tag.
             </video>
             <div class="overlay"></div>
+            <audio id="bg-music" loop>
+                <source src="assets/holiday-beach-music.mp3" type="audio/mpeg">
+            </audio>
         </div>
-        <div class="container hero-content">
+        <button id="muteToggle" class="mute-toggle" aria-label="Unmute Video">
+            <i class="fas fa-volume-mute"></i>
+        </button>
+        <div class="container hero-content" id="form">
 
             <div class="hero-text">
                 <h1 class="animate-pop">iLink Food Truck Insurance</h1>
@@ -57,7 +63,7 @@
                         Passion on Wheels</span></h2>
 
                 <div class="hero-buttons animate-slide-up delay-1">
-                    <a href="#contact" class="btn btn-primary">Get a Quote <i class="fas fa-arrow-right"></i></a>
+                    <a href="contact.html" class="btn btn-primary">Contact Us<i class="fas fa-arrow-right"></i></a>
                     <a href="#about" class="btn btn-secondary">Learn More</a>
                 </div>
             </div>
@@ -438,7 +444,7 @@
             <div class="footer-links">
                 <a href="#home">Home</a>
                 <a href="contact.html">Contact Us</a>
-                <a href="#contact">Get a Quote</a>
+                <a href="#form">Get a Quote</a>
                 <a href="#about">About Us</a>
             </div>
 

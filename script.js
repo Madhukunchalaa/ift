@@ -87,4 +87,75 @@ document.addEventListener('DOMContentLoaded', () => {
         // Start the loop
         requestAnimationFrame(checkTruckPosition);
     }
+
+    // Mute Toggle Logic
+    const video = document.getElementById('hero-video');
+    const muteBtn = document.getElementById('muteToggle');
+    const bgMusic = document.getElementById('bg-music');
+
+    if (video && muteBtn) {
+        console.log('Mute toggle initialized');
+
+        // Set initial volume for background music
+        if (bgMusic) {
+            bgMusic.volume = 0.5;
+        }
+
+        muteBtn.addEventListener('click', () => {
+            console.log('Mute toggle clicked. Current state:', video.muted);
+            if (video.muted) {
+                // Unmute video and play background music
+                video.muted = false;
+                if (bgMusic) {
+                    bgMusic.play().catch(e => console.log('Audio play failed:', e));
+                }
+                muteBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
+                muteBtn.setAttribute('aria-label', 'Mute Video');
+                console.log('Video unmuted, music playing');
+            } else {
+                // Mute video and pause background music
+                video.muted = true;
+                if (bgMusic) {
+                    bgMusic.pause();
+                }
+                muteBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';
+                muteBtn.setAttribute('aria-label', 'Unmute Video');
+                console.log('Video muted, music paused');
+            }
+        });
+    } else {
+        console.error('Video or Mute Button not found');
+    }
+
+    // Limit Audio to Hero Section
+    const heroSection = document.getElementById('home');
+
+    if (heroSection && bgMusic && video) {
+        const audioObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    // Left the viewport - pause music and video
+                    if (!bgMusic.paused) {
+                        bgMusic.pause();
+                    }
+                    if (!video.paused) {
+                        video.pause();
+                    }
+                    console.log('Hero section out of view - media paused');
+                } else {
+                    // Entered the viewport - play video
+                    if (video.paused) {
+                        video.play().catch(e => console.log('Video play failed:', e));
+                    }
+                    // Resume music if video is unmuted
+                    if (!video.muted && bgMusic.paused) {
+                        bgMusic.play().catch(e => console.log('Audio resume failed:', e));
+                    }
+                    console.log('Hero section in view - media resumed');
+                }
+            });
+        }, { threshold: 0.1 }); // Trigger when 10% of the hero is visible
+
+        audioObserver.observe(heroSection);
+    }
 });
