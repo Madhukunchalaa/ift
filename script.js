@@ -96,9 +96,17 @@ document.addEventListener('DOMContentLoaded', () => {
     if (video && muteBtn) {
         console.log('Mute toggle initialized');
 
-        // Set initial volume for background music
+        // Attempt to play background music immediately
         if (bgMusic) {
             bgMusic.volume = 0.5;
+            // Try to play, but catch error if browser blocks it
+            bgMusic.play().catch(e => {
+                console.log('Autoplay blocked:', e);
+                // If blocked, we might need to mute video and show mute icon
+                video.muted = true;
+                muteBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';
+                muteBtn.setAttribute('aria-label', 'Unmute Video');
+            });
         }
 
         muteBtn.addEventListener('click', () => {
