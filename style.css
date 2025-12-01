@@ -609,7 +609,7 @@ img {
 
 .menu-column {
     flex: 1;
-    min-width: 300px;
+    /* min-width: 300px; */
 }
 
 .menu-column h3 {
@@ -642,6 +642,7 @@ img {
     margin-bottom: 15px;
     border-bottom: 1px dotted rgba(255,255,255,0.2);
     padding-bottom: 5px;
+    padding-right: 36px;
 }
 
 .item-name {
@@ -657,7 +658,7 @@ img {
 .menu-note {
     margin-top: 30px;
     background: rgba(255,255,255,0.1);
-    padding: 15px;
+    padding: 11px;
     border-radius: 10px;
     /* transform: rotate(-2deg); */
     border: 1px solid rgba(255,255,255,0.2);
