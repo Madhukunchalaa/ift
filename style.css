@@ -1148,6 +1148,9 @@ img {
         transform: translateY(-150%);
         transition: transform 0.3s ease;
     }
+    .hero-buttons{
+        display: flex;
+    }
 
     .nav-links.active {
         transform: translateY(0);
